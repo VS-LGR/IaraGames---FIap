@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="img/logo/IARA-GAMES-logo-simb-branco.ico" type="image/x-icon">
+    <title>IaraGames</title>
+    <link rel="stylesheet" href="img/logo/IARA GAMES - logo branco.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+
+<body>
+
+    <div class="container-xlg" id="background">
+
+
+
+<div class="container-fluid" id="background">
+   <main>
+     <header>
+      <nav>
+        
+        <a class="logo" href="/"><img src="img/logo/IARA GAMES - logo branco.png" class="logo-iara" alt=""></a>
+        <div class="mobile-menu">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+        <ul class="nav-list">
+          <li><a href="#" class="btn-nav">Playstation</a></li>
+          <li><a href="#" class="btn-nav">Xbox</a></li>
+          <li><a href="#" class="btn-nav">Pc</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+
+   <!-- API --><!-- API --><!-- API --><!-- API --><!-- API --><!-- API --><!-- API --><!-- API --><!-- API --><!-- API --><!-- API -->
+    <div class="container-fluid">
+        <div class="text-center">
+   
+    <h1>Busca de Jogos</h1>
+    <form id="searchForm">
+        <input type="text" id="query" placeholder="Digite o nome do jogo ou tema" required>
+        <button type="submit">Buscar</button>
+    </form>
+    <div id="results"></div>
+</div>
+</div>
+
+
+<div class="container-fluid">
+   <h1>Jogos Populares</h1>
+    <div id="games-list" class="games-list"></div>
+
+    <script>
+        const apiKey = '0eb64185c05d4af285ec980256ff28e2';
+        const apiUrl = `https://api.rawg.io/api/games?key=${apiKey}`;
+
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                const gamesList = document.getElementById('games-list');
+                data.results.forEach(game => {
+                    const gameItem = document.createElement('div');
+                    gameItem.className = 'game-item';
+                    gameItem.innerHTML = `
+                        <h3 >${game.name}</h3>
+                        <img src="${game.background_image}" alt="${game.name}" class="img-fluid">
+                        <p class="games-texts">Lançamento: ${game.released}</p>
+                        <p class="games-texts">Avaliação: ${game.rating}⭐</p>
+                        <a href="details.html?id=${game.id}" class="details-link";>Ver Detalhes</a>
+                    `;
+                    gamesList.appendChild(gameItem);
+                });
+            })
+            .catch(error => console.error('Erro ao buscar os jogos:', error));
+    </script>
+   </div>
+   <!-- API --><!-- API --><!-- API --><!-- API --><!-- API --><!-- API --><!-- API --><!-- API --><!-- API --><!-- API --><!-- API -->
+
+    
+    
+<div class="container-fluid" id="section-confira">
+    <div class="text-center">
+    <img src="img/jogos/Default_Brasilian_Games_Banner_Web_Design_Full_HD_4k_fun_inova_1.jpg" alt="confira os melhores jogos" class="img-fluid" id="img-confira"> 
+</div>
+</div>
+
+    <section>
+        <h1 class="Preferidos">Lançamentos mais aguardados</h1>
+         
+            
+        </a>      
+
+        <div class="card-container">
+            <div class="card">
+                <img src="img/jogos/bagdex.jpg" alt="BÁGDEX">
+                <div class="card-content">
+                    <h3>BÁGDEX</h3>
+                    <a href="https://www.nuuvem.com/lp/pt/bagdex/" class="btn-card">Saiba Mais</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="img/jogos/entreasestrelas.jpg" alt="Entre as Estrelas">
+                <div class="card-content">
+                    <h3>Entre as Estrelas</h3>
+                    <a href="https://www.catarse.me/entreasestrelas" class="btn-card">Saiba Mais</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="img/jogos/enigma.jpg" alt="Enigma do Medo">
+                <div class="card-content">
+                    <h3>Enigma do Medo</h3>
+                    <a href="https://store.steampowered.com/app/1507580/Enigma_do_Medo/?l=brazilian" class="btn-card">Saiba Mais</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="xbox">
+        <h1>Preferidos Xbox</h1>
+        <a href="" class="btn-ver-mais"> 
+           
+        </a>          
+
+
+        <div class="card-container">
+            <div class="card">
+                <img src="img/jogos/Dandara.jpg" alt="Dandara: Trials of Fear Edition">
+                <div class="card-content">
+                    <h3>Dandara: Trials of Fear Edition</h3>
+                    <a href="https://www.xbox.com/pt-BR/games/store/dandara-trials-of-fear-edition/BQQD1KHRWWL8/0001" class="btn-card">Saiba Mais</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="img/jogos/pocketbravary.jpg" alt="Pocket Bravery">
+                <div class="card-content">
+                    <h3>Pocket Bravery</h3>
+                    <a href="https://www.xbox.com/pt-BR/games/store/pocket-bravery-demo/9njnzlj0rkm4" class="btn-card">Saiba Mais</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="img/jogos/KazeandtheWildMasks.avif" alt="Kaze and the Wild Masks">
+                <div class="card-content">
+                    <h3>Kaze and the Wild Masks</h3>
+                    <a href="https://www.xbox.com/pt-BR/games/store/kaze-and-the-wild-masks/9p7tk3gjvh57" class="btn-card">Saiba Mais</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="img/jogos/unsighted.avif" alt="Unsighted">
+                <div class="card-content">
+                    <h3>Unsighted</h3>
+                    <a href="https://www.xbox.com/pt-BR/games/store/unsighted/9P31WJ3N46KB/0010" class="btn-card">Saiba Mais</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="img/jogos/dandyace.jpg" alt="Dandy Ace">
+                <div class="card-content">
+                    <h3>Dandy Ace</h3>
+                    <a href="https://www.xbox.com/pt-br/games/store/dandy-ace/9nqlvqtlprs1" class="btn-card">Saiba Mais</a>
+                </div>
+            </div>
+        </div>
+    </section>
+        
+    <section class="pc"> 
+        <h1>Preferidos Pc</h1>
+        
+            
+        </a>      
+
+            <div class="card-container">
+                <div class="card">
+                    <img src="img/jogos/171.jpg" alt="171">
+                    <div class="card-content">
+                        <h3>171</h3>
+                        <a href="https://store.steampowered.com/app/1269370/171/" class="btn-card">Saiba Mais</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="img/jogos/DadsComing.jpg" alt="Dad's Coming">
+                    <div class="card-content">
+                        <h3>Dad's Coming</h3>
+                        <a href="https://store.steampowered.com/app/1527350/Dads_Coming/" class="btn-card">Saiba Mais</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="img/jogos/superchicken.jpg" alt="SUPER CHICKEN JUMPER">
+                    <div class="card-content">
+                        <h3>SUPER CHICKEN JUMPER</h3>
+                        <a href="https://store.steampowered.com/app/584640/SUPER_CHICKEN_JUMPER/" class="btn-card">Saiba Mais</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="img/jogos/evertried.jpg" alt="Evertried">
+                    <div class="card-content">
+                        <h3>Evertried</h3>
+                        <a href="https://store.steampowered.com/app/1607040/Evertried/" class="btn-card">Saiba Mais</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="img/jogos/racoo.avif" alt="Raccoo Venture">
+                    <div class="card-content">
+                        <h3>Raccoo Venture</h3>
+                        <a href="https://store.steampowered.com/app/849210/Raccoo_Venture/" class="btn-card">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <script src="mobile-navbar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+
+        
+    <footer>
+        <p>Copyright © IaraGames</p>
+    </footer>
+    <script src="rawg.js"></script>
+
+
+</div>
+</main>
+
+
+</div>
+</body>
+
+</html>
